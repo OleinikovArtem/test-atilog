@@ -19,8 +19,8 @@ module.exports.getProduct = (req, res, next) => {
 
 // POST
 module.exports.addProduc = (req, res, next) => {
-  const { title, price } = req.body
-  addProduct({ title, price })
+  const { title, price, description, imageUrl } = req.body
+  addProduct({ title, price, description, imageUrl })
     .then(() => {
       console.log('Created product is done!')
       res.json({ message: 'Product was created!' })
@@ -38,8 +38,8 @@ module.exports.removeProduct = (req, res, next) => {
 
 // PUT
 module.exports.updateProduct = (req, res, next) => {
-  const { title, price, _id } = req.body
-  findByIdAndUpdate({ title, price, _id })
+  const { title, price, _id, description } = req.body
+  findByIdAndUpdate({ title, price, _id, description })
     .then(() => {
       console.log('Updated product is done!')
       res.json({ message: 'Product was updated!' })
