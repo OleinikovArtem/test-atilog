@@ -1,11 +1,11 @@
 import React from 'react'
-import { Product } from '../../components/Product/'
+import { ProductList } from '../../components/ProductList/'
 import { Container } from '@material-ui/core'
 
 export const AppPage = () => {
   return (
     <Container>
-      <Product />
+      <ProductList />
     </Container>
   )
 }

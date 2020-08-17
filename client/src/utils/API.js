@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const instance = axios.create({
-  baseURL: '/',
+export default axios.create({
+  baseURL: '/products',
   headers: { 'Content-Type': 'application/json' }
 });
