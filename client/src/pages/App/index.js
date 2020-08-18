@@ -1,11 +1,11 @@
 import React from 'react'
+import { Layout } from '../../components/Layout'
 import { ProductList } from '../../components/ProductList/'
-import { Container } from '@material-ui/core'
 
 export const AppPage = () => {
   return (
-    <Container>
+    <Layout titleNavbar='Home'>
       <ProductList />
-    </Container>
+    </Layout>
   )
 }

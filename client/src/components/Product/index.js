@@ -1,25 +1,26 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardActions,
+  CardMedia,
+  Button,
+  Typography
+} from '@material-ui/core'
+import { useHistory } from 'react-router-dom'
 
-import { Card, CardActionArea, CardContent, CardActions, CardMedia, Button, Typography} from '@material-ui/core'
+export const Product = ({ _id, title, description, price, imageUrl, removeProduct }) => {
+  const history = useHistory()
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-})
-
-export const Product = ({ title = 'lizard', description = 'somthing text',  price = 10, imageUrl = 'https://pmcdeadline2.files.wordpress.com/2020/04/axios.png?w=1024' }) => {
-  const classes = useStyles()
+  const goEditProduct = () => history.push(`/product/edit/${_id}`)
+  const handleRemoveProduct = () => removeProduct(_id)
 
   return (
-    <Card className={classes.root}>
+    <Card className='product'>
       <CardActionArea>
         <CardMedia
-          className={classes.media}
+          className='product__img'
           image={imageUrl}
           title="Contemplative Reptile"
         />
@@ -33,10 +34,10 @@ export const Product = ({ title = 'lizard', description = 'somthing text',  pric
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={goEditProduct}>
           Edit
         </Button>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={handleRemoveProduct}>
           Delete
         </Button>
       </CardActions>
