@@ -3,16 +3,13 @@ import { NavItem } from './NavItem'
 import { urls } from '../../routes'
 
 
-export const NavList = () => {
+export const NavList = ({ closeMenu }) => {
   return (
     <nav className='nav'>
-      <NavItem to={urls.home}>
+      <NavItem to={urls.home} onClick={closeMenu}>
         Home
       </NavItem >
-      {/* <NavItem to={urls.product}>
-        Product
-      </NavItem > */}
-      <NavItem to={urls.addProduct}>
+      <NavItem to={urls.addProduct} onClick={closeMenu}>
         Add Product
       </NavItem >
 

@@ -1,10 +1,11 @@
 import { AppPage } from './pages/App/'
 import { ProductPage } from './pages/Product/'
 import { FormProductPage } from './pages/FormProductPage/'
+import { DetailProduct } from './pages/DetailProduct'
 
 export const urls = {
   home: '/',
-  product: '/product-details/:_id',
+  productDetails: '/product-details/:_id',
   editProduct: '/product/edit/:_id',
   addProduct: '/product/create/0'
 }
@@ -31,7 +32,7 @@ export const routes = [
   {
     key: 'product',
     exact: true,
-    path: urls.product,
-    component: ProductPage
+    path: urls.productDetails,
+    component: DetailProduct
   },
 ]

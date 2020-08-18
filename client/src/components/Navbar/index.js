@@ -8,12 +8,14 @@ import {
   IconButton,
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
+import '../../scss/Navbar.scss'
 
 
 export const Navbar = ({ titleNavbar }) => {
   const [isOpenMenu, setIsOpenMenu] = useState(false)
 
   const handleOpenMenu = () => setIsOpenMenu(!isOpenMenu)
+  const closeMenu = () => setIsOpenMenu(false)
 
   return (
     <div className='navbar'>
@@ -33,7 +35,7 @@ export const Navbar = ({ titleNavbar }) => {
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
-        {isOpenMenu && <NavList />}
+        {isOpenMenu && <NavList closeMenu={closeMenu}/>}
       </AppBar>
     </div>
   )

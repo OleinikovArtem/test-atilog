@@ -12,6 +12,9 @@ export const ProductList = () => {
       .then(res => {
         setProducts(res.data)
       })
+      .catch(err => {
+        console.log(err)
+      })
   }, [])
 
   const removeProduct = (_id) => {

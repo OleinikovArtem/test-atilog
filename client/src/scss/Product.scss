@@ -3,6 +3,7 @@
 }
 
 body {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   margin: 0;
 }
 
@@ -12,93 +13,42 @@ body {
     column-gap: 25px;
     row-gap: 25px;
     grid-template-columns: 1fr 1fr 1fr;
+
+    .MuiCard-root {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    h2 {
+      height: 62px;
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    p {
+      overflow: hidden;
+      text-overflow: clip;
+      max-height: 40px;
+    }
   }
   max-width: 345px;
 
   &__img {
     height: 140px;
   }
-
-  .MuiCard-root {
-    display: flex;
-    flex-direction: column;
-    
-  }
 }
 
-.Form-product {
-  width: 500px;
+.details-product {
+  max-width: 700px;
   margin: 0 auto;
-
-  .MuiFormControl-root {
-    width: 100%;
-    margin-bottom: 20px;
-
-    &:last-child {
-      width: 100px;
-    }
-  }
-  &__btn-wrap {
-    margin-bottom: 20px;
-    .MuiButtonBase-root {
-      margin-right:20px;
-    }
-  }
-}
-
-.navbar {
-  position: relative;
-  flex-grow: 1;
-
-  &__toggl-menu {
-    margin: 0 16px 0 -12px;
-  }
-
-  &__title {
-    flex-grow: 1;
-  }
-
-  &__link {
+  &__main {
     display: flex;
-    width: 100%;
   }
-
-  .MuiToolbar-root {
-    z-index: 120;
-  }
-
-  .nav {
-    position: absolute;
-    top: 64px;
-    width: 400px;
-    max-width: 100%;
-    background: inherit;
-    z-index: 100;
-
-    &::before {
-      content: '';
+  &__image-box {
+    padding-right: 20px;
+    img {
       display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba($color: #000000, $alpha: 0.2);
-      z-index: 1;
-    }
-
-    &__link {
-      position: relative;
-      font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      display: block;
-      padding: 20px;
-      z-index: 101;
-    }
-    .active {
-      color: yellow;
+      max-width: 400px;
     }
   }
 }

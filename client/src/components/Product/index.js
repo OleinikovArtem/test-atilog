@@ -15,10 +15,13 @@ export const Product = ({ _id, title, description, price, imageUrl, removeProduc
 
   const goEditProduct = () => history.push(`/product/edit/${_id}`)
   const handleRemoveProduct = () => removeProduct(_id)
-
+  const goToDetailsProduct = () => history.push(`/product-details/${_id}`)
+  
   return (
     <Card className='product'>
-      <CardActionArea>
+      <CardActionArea
+        onClick={goToDetailsProduct}
+      >
         <CardMedia
           className='product__img'
           image={imageUrl}
